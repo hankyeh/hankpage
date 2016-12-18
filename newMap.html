@@ -37,6 +37,8 @@
 	var atmMkCluster;
 	var publicToiletMkCluster;
 	
+	var openInfoWin = new Array();
+	
 	var myLatLng = {lat: 22.6210555, lng: 120.3055912};
 	
 	var geeMap;
@@ -55,6 +57,41 @@
 		geeMap.controls[google.maps.ControlPosition.TOP_RIGHT].push(centerControlDiv);
 		
 	}
+	
+	function CenterControl(controlDiv, map) { 
+
+		// Set CSS for the control border 
+		var controlUI = document.createElement('div'); 
+		controlUI.style.backgroundColor = '#fff'; 
+		controlUI.style.border = '2px solid #fff'; 
+		controlUI.style.borderRadius = '3px'; 
+		controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)'; 
+		controlUI.style.cursor = 'pointer'; 
+		controlUI.style.marginBottom = '22px'; 
+		controlUI.style.marginTop = '5px'; 
+		controlUI.style.textAlign = 'center'; 
+		controlUI.title = 'Click to recenter the map'; 
+		controlDiv.appendChild(controlUI); 
+
+		// Set CSS for the control interior 
+		var controlText = document.createElement('div'); 
+		controlText.style.color = 'rgb(25,25,25)'; 
+		controlText.style.fontFamily = 'Roboto,Arial,sans-serif'; 
+		controlText.style.fontSize = '9px'; 
+		controlText.style.lineHeight = '12px'; 
+		controlText.style.paddingLeft = '5px'; 
+		controlText.style.paddingRight = '5px'; 
+		controlText.innerHTML = '<form name="detail_form">'
+		+ '<select	id="roadSectionSelect" name="detail_level" '
+		+ 'onchange="showMarker(this.options[this.selectedIndex].value)">' 
+		+ '<option value="clear">Select Info</option>' 
+		+ '<option value="cbike">C-Bike</option>' 
+		+ '<option value="wifi">Wi-Fi</option>' 
+		+ '<option value="atm">ATM</option>' 
+		+ '<option value="toilet">Public Toilet</option>' 
+		+ '</select></form>'; 
+		controlUI.appendChild(controlText); 
+		}
 	
 	function showMarker(show){
 		
@@ -93,43 +130,6 @@
 		publicToiletMkCluster.clearMarkers();
 		}
 	}
-	
-	function CenterControl(controlDiv, map) { 
-
-		// Set CSS for the control border 
-		var controlUI = document.createElement('div'); 
-		controlUI.style.backgroundColor = '#fff'; 
-		controlUI.style.border = '2px solid #fff'; 
-		controlUI.style.borderRadius = '3px'; 
-		controlUI.style.boxShadow = '0 2px 6px rgba(0,0,0,.3)'; 
-		controlUI.style.cursor = 'pointer'; 
-		controlUI.style.marginBottom = '22px'; 
-		controlUI.style.marginTop = '5px'; 
-		controlUI.style.textAlign = 'center'; 
-		controlUI.title = 'Click to recenter the map'; 
-		controlDiv.appendChild(controlUI); 
-
-		// Set CSS for the control interior 
-		var controlText = document.createElement('div'); 
-		controlText.style.color = 'rgb(25,25,25)'; 
-		controlText.style.fontFamily = 'Roboto,Arial,sans-serif'; 
-		controlText.style.fontSize = '9px'; 
-		controlText.style.lineHeight = '12px'; 
-		controlText.style.paddingLeft = '5px'; 
-		controlText.style.paddingRight = '5px'; 
-		controlText.innerHTML = '<form name="detail_form">'
-		+ '<select	id="roadSectionSelect" name="detail_level" '
-		+ 'onchange="showMarker(this.options[this.selectedIndex].value)">' 
-		+ '<option value="clear">Select Info</option>' 
-		+ '<option value="cbike">C-Bike</option>' 
-		+ '<option value="wifi">Wi-Fi</option>' 
-		+ '<option value="atm">ATM</option>' 
-		+ '<option value="toilet">Public Toilet</option>' 
-		+ '</select></form>'; 
-		controlUI.appendChild(controlText); 
-		}
-	
-	 
 	
 	function addCbikeMk(){
 		cbMkCluster = addMkFormJson(cbikeJsonMK, cbikeJsonObj,'http://i.imgur.com/dQA0lPY.png');
@@ -175,6 +175,28 @@
 			title: dataObj.name,
 			icon: iconUrl
 		});
+		
+		var contentString = '<div id="content">'+
+						  '<div id="siteNotice">'+
+						  '</div>'+
+						  '<h1 id="firstHeading" class="firstHeading">'+ dataObj.name +'</h1>'+
+						  dataObj.address +
+						  '</div>'+
+						  '</div>';
+		
+		 var infowindow = new google.maps.InfoWindow({
+			content: contentString
+		  });
+		
+		openInfoWin.push(infowindow);
+		
+		marker.addListener('click', function() {
+			for(var i = 0 ; i < openInfoWin.length ; i++){
+				openInfoWin[i].close();
+			}
+			infowindow.open(geeMap, marker);
+		  });
+		
 		markerArr.push(marker);
 	}
 	
