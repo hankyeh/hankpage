@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>TFSLibraries01</id>
+    <version>11.0.1</version>
+    <authors>Raj Uppadhyay</authors>
+    <owners>Raj Uppadhyay</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://license_url_here_or_delete_this_line/</licenseUrl>
+    <projectUrl>http://project_url_here_or_delete_this_line/</projectUrl>
+    <iconUrl>http://icon_url_here_or_delete_this_line/</iconUrl>
+    <description>This package Contains the Version 11.0 DLLs for TFS</description>
+    <releaseNotes>Summary of changes made in this release of the package.</releaseNotes>
+    <copyright>Copyright 2016</copyright>
+    <tags>TFS References</tags>
+    <dependencies>
+      <dependency id="Test" />
+    </dependencies>
+  </metadata>
+</package>

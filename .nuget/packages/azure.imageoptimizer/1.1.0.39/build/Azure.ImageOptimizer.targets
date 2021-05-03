@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+    <Target Name="DeployImageOptimizer" BeforeTargets="BeforePublish">
+        <ItemGroup>
+            <DistFiles Include="$(MSBuildThisFileDirectory)..\opti\**\*.*"/>
+            <DotNetPublishFiles  Include="%(DistFiles.Identity)">
+                <DestinationRelativePath>App_Data\jobs\continuous\ImageOptimizer\%(RecursiveDir)%(Filename)%(Extension)</DestinationRelativePath>
+            </DotNetPublishFiles>
+        </ItemGroup>
+    </Target>
+
+</Project>

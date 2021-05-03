@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebEssentials.AspNetCore.StaticFilesWithCache</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Builder.ApplicationBuilderExtension">
+            <summary>
+            Extension methods for the <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ApplicationBuilderExtension.UseStaticFilesWithCache(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Enables static files serving with the default cache expiration of 1 year.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ApplicationBuilderExtension.UseStaticFilesWithCache(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider)">
+            <summary>
+            Enables static files with custom content type provider, serving with the default cache expiration of 1 year.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ApplicationBuilderExtension.UseStaticFilesWithCache(Microsoft.AspNetCore.Builder.IApplicationBuilder,System.TimeSpan,Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider)">
+            <summary>
+            Enables static files serving with the specified expiration.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>SharpScss</id>
+    <version>1.5.0</version>
+    <authors>Alexandre Mutel</authors>
+    <owners>Alexandre Mutel</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/xoofx/SharpScss/blob/master/license.txt</licenseUrl>
+    <projectUrl>https://github.com/xoofx/SharpScss</projectUrl>
+    <description>A P/Invoke .NET wrapper around libsass to convert SCSS to CSS for .NET</description>
+    <releaseNotes>https://github.com/xoofx/SharpScss/blob/master/changelog.md</releaseNotes>
+    <copyright>Alexandre Mutel</copyright>
+    <tags>libsass SCSS SASS CSS</tags>
+    <repository type="git" url="git://github.com/xoofx/SharpScss" commit="006ccf2655b648371dd223d74511539c7b8ff518" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+</package>

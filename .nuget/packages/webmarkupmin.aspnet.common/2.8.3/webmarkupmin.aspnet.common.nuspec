@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WebMarkupMin.AspNet.Common</id>
+    <version>2.8.3</version>
+    <title>Web Markup Minifier: ASP.NET Common</title>
+    <authors>Andrey Taritsyn</authors>
+    <owners>Andrey Taritsyn</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/Taritsyn/WebMarkupMin</projectUrl>
+    <description>WebMarkupMin.AspNet.Common is auxiliary package, that contains classes and interfaces for all ASP.NET extensions.</description>
+    <copyright>Copyright © 2013-2020 Andrey Taritsyn</copyright>
+    <tags>WebMarkupMin ASP.NET Markup HTML XHTML XML Minification Minifier Minify</tags>
+    <repository type="git" url="https://github.com/Taritsyn/WebMarkupMin" commit="4be4c0bd8814304a4cae5a44ac3cde5f9a7e0e22" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0">
+        <dependency id="WebMarkupMin.Core" version="2.8.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="WebMarkupMin.Core" version="2.8.3" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="WebMarkupMin.Core" version="2.8.3" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="WebMarkupMin.Core" version="2.8.3" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

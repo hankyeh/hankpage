@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>LigerShark.WebOptimizer.Core</id>
+    <version>3.0.250</version>
+    <authors>LigerShark</authors>
+    <owners>LigerShark</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/ligershark/WebOptimizer/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/ligershark/WebOptimizer</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ligershark/WebOptimizer/master/art/logo64x64.png</iconUrl>
+    <description>A runtime bundler and minifier for ASP.NET Core</description>
+    <copyright>Copyright © LigerShark</copyright>
+    <tags>bundle, minify, optimize, asp.net core</tags>
+    <repository url="https://github.com/ligershark/WebOptimizer" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0">
+        <dependency id="NUglify" version="1.5.13" exclude="Build,Analyzers" />
+        <dependency id="System.Text.Json" version="4.6.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

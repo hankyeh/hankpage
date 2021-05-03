@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WebMarkupMin.Core</id>
+    <version>2.8.3</version>
+    <title>Web Markup Minifier: Core</title>
+    <authors>Andrey Taritsyn</authors>
+    <owners>Andrey Taritsyn</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/Taritsyn/WebMarkupMin</projectUrl>
+    <description>The Web Markup Minifier (abbreviated WebMarkupMin) is a .NET library that contains a set of markup minifiers. The objective of this project is to improve the performance of web applications by reducing the size of HTML, XHTML and XML code.
+
+WebMarkupMin absorbed the best of existing solutions from non-microsoft platforms: Juriy Zaytsev's HTML Minifier (https://github.com/kangax/html-minifier/) (written in JavaScript) and Sergiy Kovalchuk's HtmlCompressor (https://github.com/serg472/htmlcompressor) (written in Java).
+
+Minification of markup produces by removing extra whitespaces, comments and redundant code (only for HTML and XHTML). In addition, HTML and XHTML minifiers supports the minification of CSS code from style tags and attributes, and minification of JavaScript code from script tags, event attributes and hyperlinks with javascript: protocol. WebMarkupMin.Core contains built-in JavaScript minifier based on the Douglas Crockford's JSMin (https://github.com/douglascrockford/JSMin) and built-in CSS minifier based on the Mads Kristensen's Efficient stylesheet minifier (https://madskristensen.net/blog/Efficient-stylesheet-minification-in-C). The above mentioned minifiers produce only the most simple minifications of CSS and JavaScript code, but you can always install additional modules that support the more powerful algorithms of minification: WebMarkupMin.MsAjax (contains minifier-adapters for the Microsoft Ajax Minifier - https://github.com/microsoft/ajaxmin), WebMarkupMin.Yui (contains minifier-adapters for YUI Compressor for .NET - https://github.com/YUICompressor-NET/YUICompressor.NET) and WebMarkupMin.NUglify (contains minifier-adapters for the NUglify - https://github.com/xoofx/NUglify).
+
+Also supports minification of views of popular JavaScript template engines: KnockoutJS, Kendo UI MVVM and AngularJS 1.X.</description>
+    <releaseNotes>Blazor component markers (``) are no longer removed.</releaseNotes>
+    <copyright>Copyright © 2013-2020 Andrey Taritsyn</copyright>
+    <tags>WebMarkupMin Markup HTML XHTML XML Minification Minifier Minify Performance Optimization Compression</tags>
+    <repository type="git" url="https://github.com/Taritsyn/WebMarkupMin" commit="4be4c0bd8814304a4cae5a44ac3cde5f9a7e0e22" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0-Client">
+        <dependency id="AdvancedStringBuilder" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="PolyfillsForOldDotNet.System.Buffers" version="0.1.1" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="AdvancedStringBuilder" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Buffers" version="4.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="AdvancedStringBuilder" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.0" exclude="Build,Analyzers" />
+        <dependency id="System.Buffers" version="4.0.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="AdvancedStringBuilder" version="0.1.0" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="AdvancedStringBuilder" version="0.1.0" exclude="Build,Analyzers" />
+        <dependency id="System.Buffers" version="4.4.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

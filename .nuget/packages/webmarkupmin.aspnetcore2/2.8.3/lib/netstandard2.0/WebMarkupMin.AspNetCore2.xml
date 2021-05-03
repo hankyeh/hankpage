@@ -1,0 +1,576 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebMarkupMin.AspNetCore2</name>
+    </assembly>
+    <members>
+        <member name="T:WebMarkupMin.AspNetCore2.Resources.Strings">
+            <summary>
+            A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.Resources.Strings.ResourceManager">
+            <summary>
+            Returns a cached ResourceManager instance used by this class
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.Resources.Strings.Culture">
+            <summary>
+            Overrides a current thread's CurrentUICulture property for all
+            resource lookups using this strongly typed resource class
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.Resources.Strings.UnableToFindServices">
+            <summary>
+            Looks up a localized string similar to "Unable to find the required services. Please add all the required services by calling '{0}' inside..."
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase">
+            <summary>
+            Base class of stream wrapper that apply a markup minification and compression only if necessary
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._context">
+            <summary>
+            HTTP context
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._originalStream">
+            <summary>
+            Original stream
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._cachedStream">
+            <summary>
+            Stream that original content is read into
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._compressionStream">
+            <summary>
+            Compression stream
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._autoFlushCompressionStream">
+            <summary>
+            Flag for whether to do automatically flush the compression stream
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._options">
+            <summary>
+            WebMarkupMin configuration
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._minificationManagers">
+            <summary>
+            List of markup minification managers
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._compressionManager">
+            <summary>
+            HTTP compression manager
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._wrapperInitializedFlag">
+            <summary>
+            Flag indicating whether the stream wrapper is initialized
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._minificationEnabled">
+            <summary>
+            Flag indicating whether a markup minification is enabled
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._compressionEnabled">
+            <summary>
+            Flag indicating whether a HTTP compression is enabled
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._currentUrl">
+            <summary>
+            Current URL
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._encoding">
+            <summary>
+            Text encoding
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._currentMinificationManager">
+            <summary>
+            Current markup minification manager
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._currentCompressor">
+            <summary>
+            Current HTTP compressor
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._currentCompressorInitializedFlag">
+            <summary>
+            Flag indicating whether the current HTTP compressor is initialized
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._httpHeadersModifiedForCompressionFlag">
+            <summary>
+            Flag that indicates if the HTTP headers is modified for compression
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase._disposedFlag">
+            <summary>
+            Flag that the stream wrapper is destroyed
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.BodyWrapperStreamBase.#ctor(Microsoft.AspNetCore.Http.HttpContext,System.IO.Stream,WebMarkupMin.AspNetCore2.WebMarkupMinOptions,System.Collections.Generic.IList{WebMarkupMin.AspNet.Common.IMarkupMinificationManager},WebMarkupMin.AspNet.Common.IHttpCompressionManager)">
+            <summary>
+            Constructs an instance of the stream wrapper
+            </summary>
+            <param name="context">HTTP context</param>
+            <param name="originalStream">Original stream</param>
+            <param name="options">WebMarkupMin configuration</param>
+            <param name="minificationManagers">List of markup minification managers</param>
+            <param name="compressionManager">HTTP compression manager</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.BodyWrapperStreamWithBufferingFeature">
+            <summary>
+            Stream wrapper with HTTP buffering feature that apply a markup minification and compression only if necessary
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.BodyWrapperStreamWithBufferingFeature._bufferingFeature">
+            <summary>
+            HTTP buffering feature
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.BodyWrapperStreamWithBufferingFeature.#ctor(Microsoft.AspNetCore.Http.HttpContext,System.IO.Stream,WebMarkupMin.AspNetCore2.WebMarkupMinOptions,System.Collections.Generic.IList{WebMarkupMin.AspNet.Common.IMarkupMinificationManager},WebMarkupMin.AspNet.Common.IHttpCompressionManager,Microsoft.AspNetCore.Http.Features.IHttpBufferingFeature)">
+            <summary>
+            Constructs an instance of the stream wrapper with HTTP buffering feature
+            </summary>
+            <param name="context">HTTP context</param>
+            <param name="originalStream">Original stream</param>
+            <param name="options">WebMarkupMin configuration</param>
+            <param name="minificationManagers">List of markup minification managers</param>
+            <param name="compressionManager">HTTP compression manager</param>
+            <param name="bufferingFeature">HTTP buffering feature</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.BuilderExtensions">
+            <summary>
+            Extension methods for <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> to add
+            WebMarkupMin optimization features to the request execution pipeline
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.BuilderExtensions.UseWebMarkupMin(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Adds a WebMarkupMin optimization features to the <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/> request execution pipeline
+            </summary>
+            <param name="app">The <see cref="T:Microsoft.AspNetCore.Builder.IApplicationBuilder"/></param>
+            <returns>The <paramref name="app"/></returns>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.CommonHtmlMinificationOptionsBase`1">
+            <summary>
+            Base class of common HTML minification options
+            </summary>
+            <typeparam name="TSettings">The type of generic HTML settings</typeparam>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.CommonHtmlMinificationOptionsBase`1.CssMinifierFactory">
+            <summary>
+            Gets or sets a CSS minifier factory
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.CommonHtmlMinificationOptionsBase`1.JsMinifierFactory">
+            <summary>
+            Gets or sets a JS minifier factory
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.ContentProcessingOptionsBase">
+            <summary>
+            Base class of content processing options
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.ContentProcessingOptionsBase.SupportedHttpMethods">
+            <summary>
+            Gets or sets a list of supported HTTP methods
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.ContentProcessingOptionsBase.IncludedPages">
+            <summary>
+            Gets or sets a list of URL matchers, which is used to include pages to processing
+            by markup minifier or compressor
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.ContentProcessingOptionsBase.ExcludedPages">
+            <summary>
+            Gets or sets a list of URL matchers, which is used to exclude pages from processing
+            by markup minifier or compressor
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.ContentProcessingOptionsBase.#ctor">
+            <summary>
+            Constructs a instance of content processing options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HeaderDictionaryExtensions">
+            <summary>
+            Header dictionary extensions
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HeaderDictionaryExtensions.IsEncodedContent(Microsoft.AspNetCore.Http.IHeaderDictionary)">
+            <summary>
+            Checks whether the content is encoded
+            </summary>
+            <param name="headers">The <see cref="T:Microsoft.AspNetCore.Http.IHeaderDictionary"/> to use</param>
+            <returns>Result of check (true - content is encoded; false - content is not encoded)</returns>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HtmlMinificationManager">
+            <summary>
+            HTML minification manager
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HtmlMinificationManager.#ctor(WebMarkupMin.Core.Loggers.ILogger,Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.HtmlMinificationOptions})">
+            <summary>
+            Constructs a instance of HTML minification manager
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="options">HTML minification options</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HtmlMinificationOptions">
+            <summary>
+            HTML minification options
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HtmlMinificationOptions.#ctor">
+            <summary>
+            Constructs a instance of HTML minification options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup">
+            <summary>
+            Sets up default options for <see cref="T:WebMarkupMin.AspNetCore2.HtmlMinificationOptions"/>
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup._cssMinifierFactory">
+            <summary>
+            CSS minifier factory
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup._jsMinifierFactory">
+            <summary>
+            JS minifier factory
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup.#ctor(WebMarkupMin.Core.ICssMinifierFactory,WebMarkupMin.Core.IJsMinifierFactory)">
+            <summary>
+            Constructs a instance of <see cref="T:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup"/>
+            </summary>
+            <param name="cssMinifierFactory">CSS minifier factory</param>
+            <param name="jsMinifierFactory">JS minifier factory</param>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HtmlMinificationOptionsSetup.ConfigureHtmlMinificationOptions(WebMarkupMin.AspNetCore2.HtmlMinificationOptions)">
+            <summary>
+            Sets a default options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HttpCompressionManager">
+            <summary>
+            HTTP compression manager
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HttpCompressionManager.#ctor(Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.HttpCompressionOptions})">
+            <summary>
+            Constructs a instance of HTTP compression manager
+            </summary>
+            <param name="options">HTTP compression options</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.HttpCompressionOptions">
+            <summary>
+            HTTP compression options
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.HttpCompressionOptions.CompressorFactories">
+            <summary>
+            Gets or sets a list of HTTP compressor factories
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.HttpCompressionOptions.SupportedMediaTypePredicate">
+            <summary>
+            Gets or sets a delegate that determines whether the media-type is supported
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.HttpCompressionOptions.#ctor">
+            <summary>
+            Constructs a instance of HTTP compression options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.Internal.WebMarkupMinMarkerService">
+            <summary>
+            This is a Marker class which is used to determine if all the services were added
+            to when WebMarkupMin is loaded.
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.Internal.WebMarkupMinServicesHelper">
+            <summary>
+            Helper class which contains WebMarkupMinServices related helpers
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.Internal.WebMarkupMinServicesHelper.ThrowIfWebMarkupMinNotRegistered(System.IServiceProvider)">
+            <summary>
+            Throws <see cref="T:System.InvalidOperationException"/> when <see cref="T:WebMarkupMin.AspNetCore2.Internal.WebMarkupMinMarkerService"/>
+            is not present in the list of services
+            </summary>
+            <param name="services">The list of services</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.MarkupMinificationOptionsBase`1">
+            <summary>
+            Base class of markup minification options
+            </summary>
+            <typeparam name="TSettings">The type of markup minification settings</typeparam>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.MarkupMinificationOptionsBase`1.MinificationSettings">
+            <summary>
+            Gets or sets a markup minification settings used to configure the HTML minifier
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.MarkupMinificationOptionsBase`1.SupportedMediaTypes">
+            <summary>
+            Gets or sets a list of supported media-types
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.MarkupMinificationOptionsBase`1.GenerateStatistics">
+            <summary>
+            Gets or sets a flag for whether to allow generate minification statistics
+            (available through the logger)
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.MarkupMinificationOptionsBase`1.#ctor">
+            <summary>
+            Constructs a instance of markup minification options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.WebMarkupMinMiddleware">
+            <summary>
+            WebMarkupMin middleware
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinMiddleware.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.WebMarkupMinOptions},System.IServiceProvider)">
+            <summary>
+            Constructs a instance of WebMarkupMin middleware
+            </summary>
+            <param name="next">The next middleware in the pipeline</param>
+            <param name="options">WebMarkupMin options</param>
+            <param name="services">The list of services</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase">
+            <summary>
+            Base class of WebMarkupMin middleware
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase._next">
+            <summary>
+            The next middleware in the pipeline
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase._options">
+            <summary>
+            WebMarkupMin configuration
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase._minificationManagers">
+            <summary>
+            List of markup minification manager
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase._compressionManager">
+            <summary>
+            HTTP compression manager
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinMiddlewareBase.#ctor(Microsoft.AspNetCore.Http.RequestDelegate,Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.WebMarkupMinOptions},System.IServiceProvider)">
+            <summary>
+            Constructs a instance of WebMarkupMin middleware
+            </summary>
+            <param name="next">The next middleware in the pipeline</param>
+            <param name="options">WebMarkupMin options</param>
+            <param name="services">The list of services</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptions">
+            <summary>
+            WebMarkupMin options
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinOptions._defaultEncoding">
+            <summary>
+            The default encoding that will be used if the content encoding
+            could not be determined for the current HTTP response
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.WebMarkupMinOptions.AllowMinificationInDevelopmentEnvironment">
+            <summary>
+            Gets or sets a flag for whether to allow markup minification
+            if the current hosting environment name is development
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.WebMarkupMinOptions.AllowCompressionInDevelopmentEnvironment">
+            <summary>
+            Gets or sets a flag for whether to allow HTTP compression of content
+            if the current hosting environment name is development
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.WebMarkupMinOptions.DefaultEncoding">
+            <summary>
+            Gets or sets a default encoding that will be used if the content encoding
+            could not be determined for the current HTTP response
+            </summary>
+        </member>
+        <member name="P:WebMarkupMin.AspNetCore2.WebMarkupMinOptions.HostingEnvironment">
+            <summary>
+            Gets or sets a instance of hosting environment
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinOptions.#ctor">
+            <summary>
+            Constructs a instance of WebMarkupMin options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsExtensions">
+            <summary>
+            WebMarkupMin options extensions
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsExtensions.IsMinificationEnabled(WebMarkupMin.AspNetCore2.WebMarkupMinOptions)">
+            <summary>
+            Checks whether the markup minification is enabled
+            </summary>
+            <param name="options">WebMarkupMin options</param>
+            <returns>Result of check (true - minification is enabled; false - minification is disabled)</returns>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsExtensions.IsCompressionEnabled(WebMarkupMin.AspNetCore2.WebMarkupMinOptions)">
+            <summary>
+            Checks whether the HTTP compression is enabled
+            </summary>
+            <param name="options">WebMarkupMin options</param>
+            <returns>Result of check (true - compression is enabled; false - compression is disabled)</returns>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsSetup">
+            <summary>
+            Sets up default options for <see cref="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptions"/>
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsSetup._hostingEnvironment">
+            <summary>
+            Hosting environment
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsSetup.#ctor(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Constructs a instance of <see cref="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsSetup"/>
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinOptionsSetup.ConfigureWebMarkupMinOptions(WebMarkupMin.AspNetCore2.WebMarkupMinOptions)">
+            <summary>
+            Sets a default options
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinServiceCollectionExtensions.ConfigureWebMarkupMin(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WebMarkupMin.AspNetCore2.WebMarkupMinOptions})">
+            <summary>
+            Configures a set of <see cref="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptions"/> for the application
+            </summary>
+            <param name="services">The services available in the application</param>
+            <param name="configure">The <see cref="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptions"/> which need to be configured</param>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinServiceCollectionExtensions.AddWebMarkupMin(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Adds a services required by WebMarkupMin to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>
+            </summary>
+            <param name="services">The services available in the application</param>
+            <returns>A builder that allows further WebMarkupMin specific setup of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinServiceCollectionExtensions.AddWebMarkupMin(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WebMarkupMin.AspNetCore2.WebMarkupMinOptions})">
+            <summary>
+            Adds a services required by WebMarkupMin to <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/>
+            </summary>
+            <param name="services">The services available in the application</param>
+            <param name="configure">The <see cref="T:WebMarkupMin.AspNetCore2.WebMarkupMinOptions"/> which need to be configured</param>
+            <returns>A builder that allows further WebMarkupMin specific setup of <see cref="T:Microsoft.Extensions.DependencyInjection.IServiceCollection"/></returns>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.WebMarkupMinServicesBuilder._services">
+            <summary>
+            Collection of service descriptors
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.WebMarkupMinServicesBuilder.#ctor(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Constructs a instance of WebMarkupMin builder
+            </summary>
+            <param name="services"></param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.XhtmlMinificationManager">
+            <summary>
+            XHTML minification manager
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XhtmlMinificationManager.#ctor(WebMarkupMin.Core.Loggers.ILogger,Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.XhtmlMinificationOptions})">
+            <summary>
+            Constructs a instance of XHTML minification manager
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="options">XHTML minification options</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.XhtmlMinificationOptions">
+            <summary>
+            XHTML minification options
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XhtmlMinificationOptions.#ctor">
+            <summary>
+            Constructs a instance of XHTML minification options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup">
+            <summary>
+            Sets up default options for <see cref="T:WebMarkupMin.AspNetCore2.XhtmlMinificationOptions"/>
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup._cssMinifierFactory">
+            <summary>
+            CSS minifier factory
+            </summary>
+        </member>
+        <member name="F:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup._jsMinifierFactory">
+            <summary>
+            JS minifier factory
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup.#ctor(WebMarkupMin.Core.ICssMinifierFactory,WebMarkupMin.Core.IJsMinifierFactory)">
+            <summary>
+            Constructs a instance of <see cref="T:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup"/>
+            </summary>
+            <param name="cssMinifierFactory">CSS minifier factory</param>
+            <param name="jsMinifierFactory">JS minifier factory</param>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XhtmlMinificationOptionsSetup.ConfigureXhtmlMinificationOptions(WebMarkupMin.AspNetCore2.XhtmlMinificationOptions)">
+            <summary>
+            Sets a default options
+            </summary>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.XmlMinificationManager">
+            <summary>
+            XML minification manager
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XmlMinificationManager.#ctor(WebMarkupMin.Core.Loggers.ILogger,Microsoft.Extensions.Options.IOptions{WebMarkupMin.AspNetCore2.XmlMinificationOptions})">
+            <summary>
+            Constructs a instance of XML minification manager
+            </summary>
+            <param name="logger">Logger</param>
+            <param name="options">XML minification options</param>
+        </member>
+        <member name="T:WebMarkupMin.AspNetCore2.XmlMinificationOptions">
+            <summary>
+            XML minification options
+            </summary>
+        </member>
+        <member name="M:WebMarkupMin.AspNetCore2.XmlMinificationOptions.#ctor">
+            <summary>
+            Constructs a instance of XML minification options
+            </summary>
+        </member>
+    </members>
+</doc>

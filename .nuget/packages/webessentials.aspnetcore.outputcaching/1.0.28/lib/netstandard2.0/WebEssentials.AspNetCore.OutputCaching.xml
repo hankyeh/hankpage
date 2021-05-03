@@ -1,0 +1,253 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebEssentials.AspNetCore.OutputCaching</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.AspNetCore.Builder.ApplicationBuilderExtensions">
+            <summary>
+            Extensions for registering the output caching middleware.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Builder.ApplicationBuilderExtensions.UseOutputCaching(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Registers the output caching middleware
+            </summary>
+        </member>
+        <member name="T:Microsoft.AspNetCore.Mvc.OutputCacheAttribute">
+            <summary>
+            Enables server-side output caching.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.#ctor(System.String[])">
+            <summary>
+            Enables server-side output caching.
+            </summary>
+            <param name="fileDependencies">Globbing patterns relative to the content root (not the wwwroot).</param>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.Profile">
+            <summary>
+            The name of the profile.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.Duration">
+            <summary>
+            The duration in seconds of how long to cache the response.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.VaryByHeader">
+            <summary>
+            Comma separated list of HTTP headers to vary the caching by.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.VaryByParam">
+            <summary>
+            Comma separated list of query string parameters to vary the caching by.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.VaryByCustom">
+            <summary>
+            Comma separated list of arguments to vary the caching by using a custom function.
+            </summary>
+        </member>
+        <member name="P:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.UseAbsoluteExpiration">
+            <summary>
+            Use absolute expiration instead of the default sliding expiration.
+            </summary>
+        </member>
+        <member name="M:Microsoft.AspNetCore.Mvc.OutputCacheAttribute.OnActionExecuting(Microsoft.AspNetCore.Mvc.Filters.ActionExecutingContext)">
+            <summary>
+            Executing the filter
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions">
+            <summary>
+            Extension methods to register the output caching service.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddOutputCaching(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registers the output caching service with the dependency injection system.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.ServiceCollectionExtensions.AddOutputCaching(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Action{WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions})">
+            <summary>
+            Registers the output caching service with the dependency injection system.
+            </summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.IOutputCacheKeysProvider">
+            <summary>
+            Provides methods to build cache keys.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCacheKeysProvider.GetCacheProfileCacheKey(Microsoft.AspNetCore.Http.HttpRequest)">
+            <summary>
+            Creates a key for caching the <see cref="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile"/> for the provided <paramref name="request"/>.
+            </summary>
+            <param name="request">The current request.</param>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCacheKeysProvider.GetRequestCacheKey(Microsoft.AspNetCore.Http.HttpContext,WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile)">
+            <summary>
+            Creates a key for caching <see cref="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse"/> instances depending on a <paramref name="profile"/>.
+            </summary>
+            <param name="context">The current <see cref="T:Microsoft.AspNetCore.Http.HttpContext"/>.</param>
+            <param name="profile">The profile that is used to cache the request.</param>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.IOutputCacheVaryByCustomService">
+            <summary>
+            An interface for a service to get the VaryByCustom string.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCacheVaryByCustomService.GetVaryByCustomString(System.String)">
+            <summary>
+            A function that takes an argument and returns a string to vary the caching by.
+            </summary>
+            <param name="arg">The argument to the VaryByCustom function.</param>
+            <returns>A string to vary the caching by.</returns>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.IOutputCachingService">
+            <summary>
+            An interface for the output caching service.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCachingService.TryGetValue(Microsoft.AspNetCore.Http.HttpContext,WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse@)">
+            <summary>
+            Attempts to get the value of a cached response.
+            </summary>
+            <param name="context">The current HttpContext.</param>
+            <param name="response">The cached response if a match was found in the cache.</param>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCachingService.Set(Microsoft.AspNetCore.Http.HttpContext,WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse)">
+            <summary>
+            Adds an entry to the cache.
+            </summary>
+            <param name="context">The current HttpContext.</param>
+            <param name="response">The response to cache.</param>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.IOutputCachingService.Clear">
+            <summary>
+            Clears the cache.
+            </summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheFeatureExtensions">
+            <summary>
+            Extensions methods for HttpContext
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.OutputCacheFeatureExtensions.EnableOutputCaching(Microsoft.AspNetCore.Http.HttpContext,WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile)">
+            <summary>
+            Enabled output caching of the response.
+            </summary>
+            <param name="context"></param>
+            <param name="profile">The caching profile to use.</param>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.OutputCacheFeatureExtensions.EnableOutputCaching(Microsoft.AspNetCore.Http.HttpContext,System.TimeSpan,System.String,System.String,System.String,System.Boolean,System.String[])">
+            <summary>
+            Enabled output caching of the response.
+            </summary>
+            <param name="context"></param>
+            <param name="slidingExpiration">The amount of seconds to cache the output for.</param>
+            <param name="varyByHeaders">Comma separated list of HTTP headers to vary the caching by.</param>
+            <param name="varyByParam">Comma separated list of query string parameter names to vary the caching by.</param>
+            <param name="varyByCustom">Comma separated list of arguments to vary the caching by using a custom function.</param>
+            <param name="useAbsoluteExpiration">Use absolute expiration instead of the default sliding expiration.</param>
+            <param name="fileDependencies">Globbing patterns</param>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions">
+            <summary>
+            Options for the output caching service.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.DoesRequestQualify">
+            <summary>
+            Determines if the HTTP request is appropriate for the middleware to engage.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.DoesResponseQualify">
+            <summary>
+            Determines if the HTTP response from MVC is appropriate for the middleware to cache.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.Profiles">
+            <summary>
+            A list of named caching profiles.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.ProfileCacheDuration">
+            <summary>
+            Defines how long <see cref="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile"/>s are cached.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.DefaultRequestQualifier">
+            <summary>
+            The default request validator used by the middleware.
+            </summary>
+        </member>
+        <member name="F:WebEssentials.AspNetCore.OutputCaching.OutputCacheOptions.DefaultResponseQualifier">
+            <summary>
+            The default response validator used by the middleware.
+            </summary>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile">
+            <summary>
+            A cache profile.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.Duration">
+            <summary>
+            The duration in seconds of how long to cache the response.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.VaryByHeader">
+            <summary>
+            Comma separated list of HTTP headers to vary the caching by.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.VaryByParam">
+            <summary>
+            Comma separated list of query string parameters to vary the caching by.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.VaryByCustom">
+            <summary>
+            Comma separated list of arguments to vary the caching by using a custom function.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.FileDependencies">
+            <summary>
+            Globbing patterns relative to the content root (not the wwwroot).
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.UseAbsoluteExpiration">
+            <summary>
+            Use absolute expiration instead of the default sliding expiration.
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.BuildMemoryCacheEntryOptions(Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Builds an instance of <see cref="T:Microsoft.Extensions.Caching.Memory.MemoryCacheEntryOptions"/> based on the current configuration.
+            </summary>
+            <param name="hostingEnvironment">HostingEnvironment used to watch <see cref="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheProfile.FileDependencies"/>.</param>
+        </member>
+        <member name="T:WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse">
+            <summary>
+            A version of the route in memory
+            </summary>
+        </member>
+        <member name="M:WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse.#ctor(System.Byte[],Microsoft.AspNetCore.Http.IHeaderDictionary)">
+            <summary>
+            Creates a new instance of the permutation.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse.Body">
+            <summary>
+            The body of the HTTP response.
+            </summary>
+        </member>
+        <member name="P:WebEssentials.AspNetCore.OutputCaching.OutputCacheResponse.Headers">
+            <summary>
+            The headers of the HTTP response.
+            </summary>
+        </member>
+    </members>
+</doc>

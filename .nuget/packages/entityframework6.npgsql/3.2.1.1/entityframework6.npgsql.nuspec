@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>EntityFramework6.Npgsql</id>
+    <version>3.2.1.1</version>
+    <authors>Shay Rojansky,Emil Lenngren,Francisco Figueiredo Jr.,Kenji Uno</authors>
+    <owners>Shay Rojansky,Emil Lenngren,Francisco Figueiredo Jr.,Kenji Uno</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="expression">PostgreSQL</license>
+    <licenseUrl>https://licenses.nuget.org/PostgreSQL</licenseUrl>
+    <projectUrl>http://www.npgsql.org/</projectUrl>
+    <iconUrl>http://www.npgsql.org/img/postgresql.gif</iconUrl>
+    <description>PostgreSQL provider for Entity Framework 6</description>
+    <copyright>Copyright 2019 © The Npgsql Development Team</copyright>
+    <tags>npgsql postgresql postgres data database entity framework ef orm</tags>
+    <repository type="git" url="git://github.com/npgsql/EntityFramework6.Npgsql" />
+    <dependencies>
+      <group targetFramework=".NETFramework4.5">
+        <dependency id="EntityFramework" version="6.2.0" exclude="Build,Analyzers" />
+        <dependency id="Npgsql" version="4.0.7" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System.Configuration" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Data" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Transactions" targetFramework=".NETFramework4.5" />
+      <frameworkAssembly assemblyName="System.Xml" targetFramework=".NETFramework4.5" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

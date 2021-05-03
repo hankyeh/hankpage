@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WebEssentials.AspNetCore.OutputCaching</id>
+    <version>1.0.28</version>
+    <authors>Mads Kristensen</authors>
+    <owners>Mads Kristensen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/madskristensen/WebEssentials.AspNetCore.OutputCaching/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/madskristensen/WebEssentials.AspNetCore.OutputCaching</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/madskristensen/WebEssentials.AspNetCore.OutputCaching/master/art/logo.png</iconUrl>
+    <description>ASP.NET Core middleware providing pure server-side output caching through a simple-to-use API</description>
+    <copyright>Copyright © Mads Kristensen</copyright>
+    <tags>asp.net, performance, speed, cache, caching</tags>
+    <repository url="https://github.com/madskristensen/WebEssentials.AspNetCore.OutputCaching" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="Microsoft.AspNetCore.Mvc" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

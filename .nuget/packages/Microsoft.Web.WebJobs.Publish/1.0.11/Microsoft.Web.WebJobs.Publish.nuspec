@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Microsoft.Web.WebJobs.Publish</id>
+    <version>1.0.11</version>
+    <title>Microsoft WebJobs Publish</title>
+    <authors>Microsoft Corporation</authors>
+    <owners>Microsoft,aspnet</owners>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/net_library_eula_enu.htm</licenseUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>This NuGet package is used to help support deployment of Azure WebJobs from within Microsoft Visual Studio.</description>
+    <summary>This NuGet package is used to help support deployment of Azure WebJobs from within Microsoft Visual Studio.</summary>
+    <copyright>© Microsoft Corporation. All rights reserved.</copyright>
+    <tags>WebJobs</tags>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>

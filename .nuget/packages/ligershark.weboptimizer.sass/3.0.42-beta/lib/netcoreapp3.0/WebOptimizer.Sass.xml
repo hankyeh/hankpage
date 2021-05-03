@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebOptimizer.Sass</name>
+    </assembly>
+    <members>
+        <member name="T:WebOptimizer.Sass.Compiler">
+            <summary>
+            Compiles Sass files
+            </summary>
+            <seealso cref="T:WebOptimizer.IProcessor" />
+        </member>
+        <member name="M:WebOptimizer.Sass.Compiler.CacheKey(Microsoft.AspNetCore.Http.HttpContext)">
+            <summary>
+            Gets the custom key that should be used when calculating the memory cache key.
+            </summary>
+        </member>
+        <member name="M:WebOptimizer.Sass.Compiler.ExecuteAsync(WebOptimizer.IAssetContext)">
+            <summary>
+            Executes the processor on the specified configuration.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Extensions.DependencyInjection.PipelineExtensions">
+            <summary>
+            Extensions methods for registrating the Sass compiler on the Asset Pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.PipelineExtensions.CompileScss(WebOptimizer.IAsset)">
+            <summary>
+            Compile Sass or Scss files on the asset pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.PipelineExtensions.CompileScss(System.Collections.Generic.IEnumerable{WebOptimizer.IAsset})">
+            <summary>
+            Compile Sass or Scss files on the asset pipeline.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.PipelineExtensions.AddScssBundle(WebOptimizer.IAssetPipeline,System.String,System.String[])">
+            <summary>
+            Compile Sass or Scss files on the asset pipeline.
+            </summary>
+            <param name="pipeline">The asset pipeline.</param>
+            <param name="route">The route where the compiled .css file will be available from.</param>
+            <param name="sourceFiles">The path to the .sass or .scss source files to compile.</param>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.PipelineExtensions.CompileScssFiles(WebOptimizer.IAssetPipeline)">
+            <summary>
+            Compiles .scss files into CSS and makes them servable in the browser.
+            </summary>
+            <param name="pipeline">The asset pipeline.</param>
+        </member>
+        <member name="M:Microsoft.Extensions.DependencyInjection.PipelineExtensions.CompileScssFiles(WebOptimizer.IAssetPipeline,System.String[])">
+            <summary>
+            Compiles the specified .scss files into CSS and makes them servable in the browser.
+            </summary>
+            <param name="pipeline">The pipeline object.</param>
+            <param name="sourceFiles">A list of relative file names of the sources to compile.</param>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>zeusautomationsuite</id>
+    <version>1.0.0</version>
+    <authors>Raj Uppadhyay</authors>
+    <owners>Raj Uppadhyay</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>http://tbd.com/</licenseUrl>
+    <projectUrl>http://tbd.com/</projectUrl>
+    <iconUrl>http://tbd.com/</iconUrl>
+    <description>This package contains the core library for runing the automated tests (Androids Apps, UWP apps, Web Apps) and executing them using Selenium/CodedUI on cross platforms.</description>
+    <releaseNotes>This is the first stable version of the library.</releaseNotes>
+    <copyright>Copyright 2017</copyright>
+    <tags>TestAutomation, Selenium, Appium, CodedUI, VS2015-17</tags>
+  </metadata>
+</package>

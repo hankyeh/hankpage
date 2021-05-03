@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WebEssentials.AspNetCore.StaticFilesWithCache</id>
+    <version>1.0.3</version>
+    <authors>Mads Kristensen</authors>
+    <owners>Mads Kristensen</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/madskristensen/WebEssentials.AspNetCore.StaticFilesWithCache/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/madskristensen/WebEssentials.AspNetCore.StaticFilesWithCache</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/madskristensen/WebEssentials.AspNetCore.StaticFilesWithCache/master/art/logo.png</iconUrl>
+    <description>ASP.NET Core middleware that adds client-side caching headers to static files.</description>
+    <copyright>Copyright © Mads Kristensen</copyright>
+    <tags>asp.net, performance, speed, cache, caching</tags>
+    <repository url="https://github.com/madskristensen/WebEssentials.AspNetCore.StaticFilesWithCache" />
+    <dependencies>
+      <group targetFramework=".NETStandard1.3">
+        <dependency id="Microsoft.AspNetCore.StaticFiles" version="1.1.3" exclude="Build,Analyzers" />
+        <dependency id="NETStandard.Library" version="1.6.1" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>

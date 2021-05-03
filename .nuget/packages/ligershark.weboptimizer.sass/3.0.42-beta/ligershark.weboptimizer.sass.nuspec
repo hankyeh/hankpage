@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>LigerShark.WebOptimizer.Sass</id>
+    <version>3.0.42-beta</version>
+    <authors>LigerShark</authors>
+    <owners>LigerShark</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/ligershark/WebOptimizer.Sass/blob/master/LICENSE.txt</licenseUrl>
+    <projectUrl>https://github.com/ligershark/WebOptimizer.Sass</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/ligershark/WebOptimizer/master/art/logo64x64.png</iconUrl>
+    <description>Compiles Sass and Scss files for the LigerShark.WebOptimizer.Core system.</description>
+    <copyright>Copyright © LigerShark</copyright>
+    <tags>sass, scss, bundle, minify, optimize, asp.net core</tags>
+    <repository url="https://github.com/ligershark/WebOptimizer.Sass" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.0">
+        <dependency id="LigerShark.WebOptimizer.Core" version="3.0.250" exclude="Build,Analyzers" />
+        <dependency id="SharpScss" version="1.5.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.0">
+        <frameworkReference name="Microsoft.AspNetCore.App" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+</package>

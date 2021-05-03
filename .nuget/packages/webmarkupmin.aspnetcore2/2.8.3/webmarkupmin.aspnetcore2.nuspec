@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>WebMarkupMin.AspNetCore2</id>
+    <version>2.8.3</version>
+    <title>Web Markup Minifier: ASP.NET Core 2.X</title>
+    <authors>Andrey Taritsyn</authors>
+    <owners>Andrey Taritsyn</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <licenseUrl>https://aka.ms/deprecateLicenseUrl</licenseUrl>
+    <icon>icon.png</icon>
+    <projectUrl>https://github.com/Taritsyn/WebMarkupMin</projectUrl>
+    <description>WebMarkupMin.AspNetCore2 contains one ASP.NET Core 2.X Middleware - `WebMarkupMinMiddleware`.</description>
+    <copyright>Copyright © 2013-2020 Andrey Taritsyn</copyright>
+    <tags>WebMarkupMin ASP.NET Middleware Markup HTML XHTML XML Minification Minifier Minify</tags>
+    <repository type="git" url="https://github.com/Taritsyn/WebMarkupMin" commit="4be4c0bd8814304a4cae5a44ac3cde5f9a7e0e22" />
+    <dependencies>
+      <group targetFramework=".NETCoreApp2.1">
+        <dependency id="WebMarkupMin.AspNet.Common" version="2.8.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http.Extensions" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http.Features" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options" version="2.1.1" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Net.Http.Headers" version="2.1.14" exclude="Build,Analyzers" />
+      </group>
+      <group targetFramework=".NETStandard2.0">
+        <dependency id="WebMarkupMin.AspNet.Common" version="2.8.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Hosting.Abstractions" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http.Extensions" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.AspNetCore.Http.Features" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Extensions.Options" version="2.0.2" exclude="Build,Analyzers" />
+        <dependency id="Microsoft.Net.Http.Headers" version="2.0.3" exclude="Build,Analyzers" />
+        <dependency id="System.Buffers" version="4.4.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+  </metadata>
+</package>
